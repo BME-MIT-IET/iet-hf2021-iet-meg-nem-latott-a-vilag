@@ -5,4 +5,4 @@ Feature: Monday isn't Friday
     Scenario: Monday isn't Friday
     Given today is Monday
     When I ask wether it's Friday yet
-    Then I should be told "Nope"
+    Then I should be told "Friday"
