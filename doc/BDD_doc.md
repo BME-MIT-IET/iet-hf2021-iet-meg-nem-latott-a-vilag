@@ -7,3 +7,6 @@ konfigurálni.
 
 ## Struktúra
 A bdd tesztek a test/features mappában találhatóak, valamint az itt található step_definitions mappában vannak a lépések megvalósításai is.
+
+Tesztelt feautue-k
+- paraméterek manipulása

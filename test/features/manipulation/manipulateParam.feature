@@ -23,3 +23,8 @@ Feature: Manipulate url
         | http://example.com/           | paramName | 9         | xy        |
         | https://google.com/path?a=b   | b         | c         | 3         |
         | /x/y                          | z         | someValue | new Value |
+
+    Scenario: Clear all parameters
+    Given an url "http://example.com?a=b&b=c&d=3"
+    When I clear all the parameters
+    Then the url will be "http://example.com/"
