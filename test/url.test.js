@@ -46,7 +46,7 @@ describe('Url()', function () {
     });
     it('should match current dir when construct with no argument', function () {
         const u = new Url();
-        const dir = u.path.replace(/\//g, p.sep);
+        var dir = u.path.replace(/\//g, p.sep);
         process.platform.match(/^win/) && (dir = dir.substr(1));
         assert.equal(dir, fs.realpathSync('.'));
     });
@@ -174,4 +174,8 @@ describe('Path url encoding', function () {
         const u = new Url('http://localhost/path+with+plus');
         assert.equal(u.toString(), 'http://localhost/path%2bwith%2bplus');
     });
+    it('should correctly encode random characters', function(){
+        const u = new Url('http://localhost/path-with-áéü');
+        assert.equal(u.toString(), 'http://localhost/path-with-%C3%A1%C3%A9%C3%BC');
+    })
 });
