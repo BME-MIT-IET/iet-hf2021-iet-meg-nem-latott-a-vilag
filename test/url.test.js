@@ -3,7 +3,7 @@
 const assert = require('assert');
 const fs = require('fs');
 const p = require('path');
-const Url = require('../url.min.js');
+const Url = require('../url.js');
 
 function sanitizeURL (url) {
     var u = new Url(url, true);
@@ -95,6 +95,10 @@ describe('Url.queryLength()', function () {
         queryLength = url.queryLength();
         assert.equal(queryLength, 3);
     });
+    it('should correctly check empty querys', function () {     
+        let url = new Url('http://localhost/');
+        assert.equal(url.isEmptyQuery(), true);
+    });
 });
 
 describe('Url.query.toString()', function () {
@@ -158,6 +162,20 @@ describe('Url props interface', function () {
         assert.equal(u.hash, 'anchor');
         assert.equal(str, u.toString());
     });
+    it('should parse all URL parts correctly', function () {
+        const str = 'wss://example.com/some/path.html?foo=bar';
+        const u = new Url(str);
+        assert.equal(u.protocol, 'wss');
+        assert.equal(u.user, '');
+        assert.equal(u.pass, '');
+        assert.equal(u.host, 'example.com');
+        assert.equal(u.port, '');
+        assert.equal(u.path, '/some/path.html');
+        assert.equal(u.query, 'foo=bar');
+        assert.equal(u.query.foo, 'bar');
+        assert.equal(u.hash, '');
+        assert.equal(str, u.toString());
+    });
 });
 
 describe('Path url encoding', function () {
@@ -177,5 +195,9 @@ describe('Path url encoding', function () {
     it('should correctly encode random characters', function(){
         const u = new Url('http://localhost/path-with-áéü');
         assert.equal(u.toString(), 'http://localhost/path-with-%C3%A1%C3%A9%C3%BC');
+    })
+    it('should correctly encode random characters 2', function(){
+        const u = new Url('http://localhost/path-with-႓');
+        assert.equal(u.toString(), 'http://localhost/path-with-%E1%82%93');
     })
 });
