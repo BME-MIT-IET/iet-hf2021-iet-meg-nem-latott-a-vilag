@@ -25,6 +25,9 @@ Feature: Manipulate url
         | /x/y                          | z         | someValue | new Value |
 
     Scenario: Clear all parameters
-    Given an url "http://example.com?a=b&b=c&d=3"
+    Given an url "http://example.com"
+    And it has a parameter "a" with value "b"
+    And it has a parameter "b" with value "d"
+    And it has a parameter "c" with value "3"
     When I clear all the parameters
     Then the url will be "http://example.com/"
