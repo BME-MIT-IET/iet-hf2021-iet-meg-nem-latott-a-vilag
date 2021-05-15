@@ -145,6 +145,13 @@ describe('Url.query.toString()', function () {
         u.query.a[1] = null;
         assert.equal(u.toString(), originalStr);
     });
+    it('should give empty query string for empty array', function() {
+        const originalStr = 'http://localhost/?a&a&a'
+        const u = new Url(originalStr);
+
+        u.query.a = [];
+        assert.equal(u.toString(), 'http://localhost/?a=')
+    })
 });
 
 describe('Url props interface', function () {
@@ -201,3 +208,14 @@ describe('Path url encoding', function () {
         assert.equal(u.toString(), 'http://localhost/path-with-%E1%82%93');
     })
 });
+
+describe('Path url decoding', function() {
+    it('should not decode non-existing 2-hex-long character codes', function() {
+        const u = new Url('http://localhost/path-with-%C1%80');
+        assert.equal(Url.prototype.decode(u.toString()), 'http://localhost/path-with-%C1%80')
+    });
+    it('should not decode non-existing 3-hex-long character codes', function() {
+        const u = new Url('http://localhost/path-with-%E0%80%80');
+        assert.equal(Url.prototype.decode(u.toString()), 'http://localhost/path-with-%E0%80%80')
+    });
+})
