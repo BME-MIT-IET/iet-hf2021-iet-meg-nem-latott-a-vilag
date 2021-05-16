@@ -14,8 +14,9 @@ Mivel egy terminálra érkező kimenetet kell kijeleznem egy webböngészőben, 
 
 ## Végső lépések
 - A kódon lefuttatjuk a "build" lépést ami mindösszesen a kód minify-olását jelenti.
-- Tesztek lefuttatása MochaJS segítségével.
-- A tesztek kimenetét bele pipe-oljuk a sed nevű utility eszközbe, és beillesztünk soronként egy sortörést, hogy ne legyenek ömlesztve a böngészőben a tesztesetek. A sed kimenetét kiírjuk a tesztesetek megjelenítésére szánt file-ba.
+- Tesztek lefuttatása.
+  * Tesztek futattása npm és MochaJS segítségével.
+  * A tesztek kimenetét bele pipe-oljuk a sed nevű utility eszközbe, és beillesztünk soronként egy sortörést, hogy ne legyenek ömlesztve a böngészőben a tesztesetek. A sed kimenetét kiírjuk a tesztesetek megjelenítésére szánt file-ba.
   ```bash
   npm test | sed 's/$/\<br \/\>/' > /app/test/index.html
   ```
@@ -36,7 +37,7 @@ Mivel egy terminálra érkező kimenetet kell kijeleznem egy webböngészőben, 
 Írtam három helper scriptet a munkafolyamat meggyorsításához.
 
 ### builddocker.sh
-Egyetlen lépésben buildelem a docker image-t `domurl-test` néven.
+- Egyetlen lépésben buildelem a docker image-t `domurl-test` néven.
   ```bash
   docker build -t domurl-test .
   ```
