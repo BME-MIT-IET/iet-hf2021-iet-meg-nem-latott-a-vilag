@@ -9,6 +9,8 @@ Az image létrehozásához a `node:14`-es minta image-t használtam, ugyanis ezt
 ## Teszt erermények eljutattása a felhasználóhoz
 Mivel a dockerből kiolvasni a logokat jelentősen kényelmetlenebb lenne minden változtatás után, ezért ki kellett találnom valami egyszerű módszert a teszteredmények továbbításához. A legjobban elérhető módszer az egyértelműen a webböngésző, szóval telepítettem egy egyszerű `http-server` nevű csomagot a Node package manager segítségével. A servert csak el kell indítani a megfelelő mappával paraméterként és már ki is szolgálja a mappa tartalmát.
 
+![](images/docker.png)
+
 ## Eredmények kiszolgálható formába történő átalakítása
 Mivel egy terminálra érkező kimenetet kell kijeleznem egy webböngészőben, a terminál kimenetet kell kiírnom egy html file-ba. A böngészők a html szabványt követik, de ha egy fileba csak szöveget írunk semmi féle szabványos html kód nélkül, a böngésző akkor is kijelzi a szöveget, csupán formázatlanul teszi ezt.
 
@@ -63,6 +65,8 @@ Mivel egy terminálra érkező kimenetet kell kijeleznem egy webböngészőben, 
   ```bash
   xdg-open http://localhost:8081/
   ```
+
+![](images/docker2.png)
 
 ### killdocker.sh
 - Kiíratom az aktuálisan futó konténereket diagnosztika miatt.

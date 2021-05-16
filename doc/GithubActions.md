@@ -15,3 +15,5 @@ A célra teljesen megfelelt a NodeJS minta workflow. Mivel a 14.x long term supp
 
 ## Végeredmény
 Az action sikeresen fut minden egyes pull requestünknél, ezzel is elősegítve a jobb minőségű kódbázist.
+
+![](images/actions.png)
