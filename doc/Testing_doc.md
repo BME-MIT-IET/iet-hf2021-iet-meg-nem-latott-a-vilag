@@ -10,4 +10,15 @@ A mocha tesztek a test mappában az url.test.js fileban találhatóak, és futta
 
 ## Tesztek
 
-Új tesztek hozzáadásával javítottam a tesztelés kódlefedettségét.
+Új tesztek hozzáadásával javítottuk a tesztelés kódlefedettségét.
+
+Átnéztük a kódot és értelmezük hol lehetett még további teszteket hozzáadni olyan részekhez amik soha nem hívódnak meg.
+
+Ilyen részek voltak:
+ - isEmptyQuery() függvény
+ - amennyiben a query üres tömböt kap megfelelően alakítja-e át és a végeredmény egy üres query string lesz-e
+ - az URL-t megfelelő részekre bont-e fel a program amikkel utána tovább dolgozik
+ - az elérési útban található karaktereket megfelelően kódolni tudja-e (encoding)
+ - az elérési út visszalakításánál (decode) érzékeli-e ha nem létező két vagy három hex hosszú karakterkódokat talál, ilyen esetekben megfelelően jár-e el
+
+Ezek implementálásával majdnem teljessé tettük a kódlefedettséget és minden fő alkotóelemét teszteltük a programnak.
