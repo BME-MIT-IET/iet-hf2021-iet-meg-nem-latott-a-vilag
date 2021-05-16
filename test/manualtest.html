@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>domurl manual test</title>
+    <meta name="description" content="domurl manual test">
+    <meta name="author" content="iet-meg-nem-latott-a-vilag">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+    <script src="./url.min.js"></script>
+    <script src="manualtest.js"></script>
+
+</head>
+
+<body>
+    <h3>encode(s)</h3>
+        <label for="encode">s:</label>
+        <input type="text" id="encode" name="encode"><br><br>
+
+        <button onclick="urlencode()">Start</button>
+    <hr>
+
+    <h3>decode(s)</h3>
+        <label for="decode">s:</label>
+        <input type="text" id="decode" name="decode"><br><br>
+
+        <button onclick="urldecode()">Start</button>
+    <hr>
+
+    <h3>Url(url, notransform)</h3>     
+        <label for="urlu">url:</label>
+        <input type="text" id="urlu" name="urlu"><br><br>
+        <label for="urlnt">notransform:</label>
+        <input type="checkbox" id="urlnt" name="urlnt"><br><br>
+
+        <button onclick="constructortest()">Start</button>     
+    <hr>
+
+    <h3>Url.protoype.clearQuery()</h3>    
+        <button onclick="clrquery()">Start</button>    
+    <hr>
+
+    <h3>Url.prototype.queryLength()</h3>   
+        <button onclick="lgtquery()">Start</button>     
+    <hr>
+
+    <h3>Url.prototype.isEmptyQuery()</h3>    
+        <button onclick="imptquery()">Start</button>   
+    <hr>
+
+    <h3>Url.prototype.paths(paths)</h3>   
+        <label for="uppp">paths:</label>
+        <input type="text" id="uppp" name="uppp"><br><br>
+
+        <button onclick="urlpaths()">Start</button>     
+    <hr>
+
+    <h3>Url.prototype.isAbsolute()</h3>
+        <button onclick="iabsquery()">Start</button>     
+    <hr>
+
+    <h3>Url.prototype.toString()</h3>
+        <button onclick="strfyquery()">Start</button>
+    <hr>
+
+
+</body>
+
+</html>
