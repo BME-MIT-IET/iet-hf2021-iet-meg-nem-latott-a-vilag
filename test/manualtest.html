@@ -11,120 +11,60 @@
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
+    <script src="./url.min.js"></script>
+    <script src="manualtest.js"></script>
+
 </head>
 
 <body>
-
-    <h3>Test urlConfig(url)</h3>
-
-    <form>
-        <label for="urlConfig">url:</label>
-        <input type="text" id="urlConfig" name="urlConfig"><br><br>
-
-        <input type="submit" value="Start">
-    </form>
-    <hr>
-
-    <!--getCurrUrl-->
-
-    <h3>Test parse(self, url, absolutize)</h3>
-
-    <form>
-        <label for="parses">self:</label>
-        <input type="text" id="parses" name="parses"><br><br>
-        <label for="parseu">url:</label>
-        <input type="text" id="parseu" name="parseu"><br><br>
-        <label for="parsea">absolutize:</label>
-        <input type="text" id="parsea" name="parsea"><br><br>
-
-        <input type="submit" value="Start">
-    </form>
-    <hr>
-
     <h3>encode(s)</h3>
-
-    <form>
         <label for="encode">s:</label>
         <input type="text" id="encode" name="encode"><br><br>
 
-        <input type="submit" value="Start">
-    </form>
+        <button onclick="urlencode()">Start</button>
     <hr>
 
     <h3>decode(s)</h3>
-
-    <form>
         <label for="decode">s:</label>
         <input type="text" id="decode" name="decode"><br><br>
 
-        <input type="submit" value="Start">
-    </form>
+        <button onclick="urldecode()">Start</button>
     <hr>
 
-    <!--Querystring(qs) - this is a class-->
-
-    <h3>Querystring.prototype.toString()</h3>
-
-    <form>
-        <input type="submit" value="Start">
-    </form>
-    <hr>
-
-    <h3>Url(url, notransform)</h3>
-
-    <form>
+    <h3>Url(url, notransform)</h3>     
         <label for="urlu">url:</label>
         <input type="text" id="urlu" name="urlu"><br><br>
         <label for="urlnt">notransform:</label>
-        <input type="text" id="urlnt" name="urlnt"><br><br>
+        <input type="checkbox" id="urlnt" name="urlnt"><br><br>
 
-        <input type="submit" value="Start">
-    </form>
+        <button onclick="constructortest()">Start</button>     
     <hr>
 
-    <h3>Url.protoype.clearQuery()</h3>
-
-    <form>
-        <input type="submit" value="Start">
-    </form>
+    <h3>Url.protoype.clearQuery()</h3>    
+        <button onclick="clrquery()">Start</button>    
     <hr>
 
-    <h3>Url.prototype.queryLength()</h3>
-
-    <form>
-        <input type="submit" value="Start">
-    </form>
+    <h3>Url.prototype.queryLength()</h3>   
+        <button onclick="lgtquery()">Start</button>     
     <hr>
 
-    <h3>Url.prototype.isEmptyQuery()</h3>
-
-    <form>
-        <input type="submit" value="Start">
-    </form>
+    <h3>Url.prototype.isEmptyQuery()</h3>    
+        <button onclick="imptquery()">Start</button>   
     <hr>
 
-    <h3>Url.prototype.paths(paths)</h3>
-
-    <form>
+    <h3>Url.prototype.paths(paths)</h3>   
         <label for="uppp">paths:</label>
         <input type="text" id="uppp" name="uppp"><br><br>
 
-        <input type="submit" value="Start">
-    </form>
+        <button onclick="urlpaths()">Start</button>     
     <hr>
 
     <h3>Url.prototype.isAbsolute()</h3>
-
-    <form>
-        <input type="submit" value="Start">
-    </form>
+        <button onclick="iabsquery()">Start</button>     
     <hr>
 
     <h3>Url.prototype.toString()</h3>
-
-    <form>
-        <input type="submit" value="Start">
-    </form>
+        <button onclick="strfyquery()">Start</button>
     <hr>
 
 
