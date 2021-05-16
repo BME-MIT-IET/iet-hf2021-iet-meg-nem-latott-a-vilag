@@ -10,3 +10,4 @@ Egy egyszerű html weboldalon is használható URL kezelő könyvtárat választ
 - BDD
 - Docker
 - Manuális tesztelés
+- Kódbiztonság növelése
